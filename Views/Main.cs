@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace Desktop_Rectificadora
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
-        public Form1()
+        Controller.MainController mainController = new Controller.MainController();
+        public Main()
         {
             InitializeComponent();
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = mainController.GetList();
         }
     }
 }
